@@ -264,11 +264,11 @@ def _build_bert(num_classes,
     dense = model.get_layer('NSP-Dense').output
     outputs = Dense(units=256, activation=activation)(dense)
     #outputs = Dense(units=num_classes, activation=activation)(dense)
-    model = Model(inputs, outputs)
+    #model = Model(inputs, outputs)
     #model.compile(loss=loss_func,
     #              optimizer=U.DEFAULT_OPT,
     #              metrics=metrics)
-    return model
+    return inputs, outputs
 
 
 def _build_transformer(num_classes,
